@@ -1,14 +1,13 @@
-import React, { Component, Fragment } from 'react'
+import React from 'react';
+import { View, Text } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import Homepage from './components/homepage/Homepage'
 
-export default class App extends Component {
-  constructor(props){
-    super(props)
-    
-  }
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: Homepage,
+  },
+});
 
- 
-  render() {
-    return(<Homepage/>)
-  }
-}
+export default createAppContainer(AppNavigator);
