@@ -18,6 +18,10 @@ class ApiCalls {
     bestSellers = (catName) => {
         return axios.get("https://api.nytimes.com/svc/books/v3/lists/current/"+catName+".json?api-key="+this.API_KEY)
     }
+
+    singleBook = (isbn) => {
+        return axios.get("https://www.googleapis.com/books/v1/volumes?q="+isbn+"&maxResults=1");
+    }
     
 }
 

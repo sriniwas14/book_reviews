@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { View, ScrollView, Image } from 'react-native';
 import { Text, Rating } from 'react-native-elements';
 import api from '../../api/ApiCalls';
+import SectionItem from './SectionItem';
 
 export default class Section extends Component {
     constructor(props){
@@ -17,6 +18,8 @@ export default class Section extends Component {
     fetchBooks = (catName) => {
         api.bestSellers(catName).then((resp)=> {
             this.setState({ books: resp.data.results.books })
+        }).catch((err)=> {
+            console.log("ERR", err)
         })
     }
     render() {
@@ -28,32 +31,12 @@ export default class Section extends Component {
                 <Fragment>
                     {books.map((item)=> {
                     return (
-                        <View style={{ margin: 10 }}>
-                        <Image source={{ uri: item.book_image }} style={{ height: 250, width: 160}}/>
-                        <Text style={{ width: 160 }}>{ this.shortenString(item.title) }</Text>
-                        <Text style={{ color: "#007acc" }}>by { item.author }</Text>
-                        <Rating
-                            type='star'
-                            ratingCount={5}
-                            startingValue={ 2 }
-                            imageSize={20}
-                            style={{ alignItems: "flex-start" }}
-                            onFinishRating={this.ratingCompleted}
-                            />
-                        </View>
+                        <SectionItem navigation={this.props.navigation} item={item}/>
                     );
                     })}
                 </Fragment>
                 </ScrollView>
             </Fragment>
         )
-    }
-
-    shortenString(string) {
-        if(string.length > 30) {
-        return string.substring(0,20)+"..."
-        } else {
-        return string
-        }
     }
 }

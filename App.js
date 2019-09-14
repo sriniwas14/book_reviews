@@ -8,8 +8,12 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 const AppNavigator = createStackNavigator({
-    Home: Homepage,
-    S: SingleBook,
+    Home:{
+      screen: Homepage
+    },
+    Single:{
+      screen: SingleBook
+    } 
   },
   {
     initialRouteName: 'Home',
