@@ -34,30 +34,30 @@ class Homepage extends Component {
       title: "Non-Fiction",
       id: "combined-print-and-e-book-nonfiction"
     },
-    // {
-    //   title: "Fiction",
-    //   id: "combined-print-and-e-book-fiction",
-    // },
-    // {
-    //   title: "Advice and How-To",
-    //   id: "advice-how-to-and-miscellaneous",
-    // },
-    // {
-    //   title: "Manga",
-    //   id: "manga",
-    // },
-    // {
-    //   title: "Young Adult",
-    //   id: "young-adult",
-    // },
-    // {
-    //   title: "Food and Fitness",
-    //   id: "food-and-fitness",
-    // },
-    // {
-    //   title: "Sports and Fitness",
-    //   id: "sports",
-    // }
+    {
+      title: "Fiction",
+      id: "combined-print-and-e-book-fiction",
+    },
+    {
+      title: "Advice and How-To",
+      id: "advice-how-to-and-miscellaneous",
+    },
+    {
+      title: "Manga",
+      id: "manga",
+    },
+    {
+      title: "Young Adult",
+      id: "young-adult",
+    },
+    {
+      title: "Food and Fitness",
+      id: "food-and-fitness",
+    },
+    {
+      title: "Sports and Fitness",
+      id: "sports",
+    }
   ]
 
   searchBooks = (query) => {
