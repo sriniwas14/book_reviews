@@ -31,7 +31,7 @@ export default class Section extends Component {
                 <Fragment>
                     {books.map((item)=> {
                     return (
-                        <SectionItem navigation={this.props.navigation} item={item}/>
+                        <SectionItem key={ item.book_uri !== undefined ? item.book_uri : "" } navigation={this.props.navigation} item={item}/>
                     );
                     })}
                 </Fragment>
