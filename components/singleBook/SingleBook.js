@@ -13,17 +13,14 @@ export default class SingleBook extends Component {
         this.singleBook(this.state.isbn)
     }
     static navigationOptions = {
-    title: 'Book Reviews',
-    headerStyle: {
-        backgroundColor: "#292929"
-    },
-    headerTintColor: "#fff",
-    headerRight: (
-        <TouchableOpacity onPress={()=> this.setState({ showSearch: !this.state.showSearch })} style={{ paddingHorizontal: 10 }}>
-            <Icon name='search' color="#ffffff"/>
-        </TouchableOpacity>
-      ),
-   };
+        title: 'Book Reviews',
+        headerStyle: {
+            backgroundColor: "#000000",
+            fontWeight: "200",
+            fontSize: "12px"
+        },
+        headerTintColor: "#fff"
+    };
 
    singleBook = (isbn) => {
        api.singleBook(isbn).then((resp)=>{
